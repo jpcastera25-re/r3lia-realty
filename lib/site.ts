@@ -1,6 +1,7 @@
 export const site = {
   name: "R3LIA Realty",
   tagline: "Luxury real estate, intelligently represented.",
+  navCta: "Private Consultation",
   hero: {
     eyebrow: "Private Real Estate Advisory",
     headline: "Luxury real estate, intelligently represented.",

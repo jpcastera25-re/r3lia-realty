@@ -5,8 +5,19 @@ import { Footer } from "@/components/Footer";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: `${site.name} | ${site.tagline}`,
-  description: site.tagline
+  metadataBase: new URL("https://r3liarealty.com"),
+  title: {
+    default: `${site.name} | ${site.tagline}`,
+    template: `%s | ${site.name}`
+  },
+  description: site.tagline,
+  openGraph: {
+    title: `${site.name} | ${site.tagline}`,
+    description: site.tagline,
+    type: "website",
+    url: "https://r3liarealty.com",
+    siteName: site.name
+  }
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

@@ -12,12 +12,12 @@ export const highland = {
   narrative:
     "The Residence at Highland is curated for calm, scale, and everyday ease. From first arrival through evening retreat, each space is composed to feel intentional and quietly elevated. Final photography and specific architectural details will be published with the full launch package.",
   gallery: [
-    { title: "Arrival", image: "/images/placeholders/arrival.svg" },
-    { title: "Living", image: "/images/placeholders/living.svg" },
-    { title: "Kitchen & Dining", image: "/images/placeholders/kitchen.svg" },
-    { title: "Primary Suite", image: "/images/placeholders/suite.svg" },
-    { title: "Grounds", image: "/images/placeholders/grounds.svg" },
-    { title: "Lifestyle", image: "/images/placeholders/lifestyle.svg" }
+    { title: "Arrival" },
+    { title: "Living" },
+    { title: "Kitchen & Dining" },
+    { title: "Primary Suite" },
+    { title: "Grounds" },
+    { title: "Lifestyle" }
   ],
   rareQualities: [
     {
