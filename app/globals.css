@@ -8,14 +8,28 @@
 
 body {
   min-height: 100vh;
+  text-rendering: geometricPrecision;
 }
 
 .hero-overlay {
-  background: linear-gradient(to bottom, rgba(247, 243, 236, 0.1), rgba(247, 243, 236, 0.85));
+  background: linear-gradient(to bottom, rgba(247, 243, 236, 0.18), rgba(247, 243, 236, 0.9));
 }
 
 .eyebrow {
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
+}
+
+a,
+button {
+  @apply outline-none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  @apply ring-2 ring-brass/55 ring-offset-2 ring-offset-ivory;
 }
