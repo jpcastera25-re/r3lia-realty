@@ -18,7 +18,7 @@ export default function IntelligencePage() {
       <p className="eyebrow mb-4 text-espresso/70">Intelligence</p>
       <h1 className="max-w-4xl font-serif text-5xl text-charcoal">HAVN, quietly supporting every advisory decision.</h1>
       <p className="mt-6 max-w-3xl text-espresso/85">
-        HAVN is not a standalone product pitch. It is the support layer behind R3LIA advisory work, organizing market context, scenario comparisons, and communication strategy so guidance remains clear under pressure.
+        HAVN supports R3LIA&apos;s advisory work behind the scenes, organizing market context, scenario comparisons, and communication strategy so guidance remains clear under pressure.
       </p>
       <div className="mt-10 rounded-3xl border border-brass/30 bg-brass/10 p-8 md:p-10">
         <h2 className="font-serif text-3xl text-charcoal">Built for disciplined decision moments.</h2>

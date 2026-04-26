@@ -8,7 +8,7 @@ export function Footer() {
         <div>
           <p className="font-serif text-2xl tracking-[0.12em] text-charcoal">R3LIA</p>
           <p className="mt-1 text-[10px] tracking-[0.34em] text-espresso/70">REALTY</p>
-          <p className="mt-4 max-w-xs text-xs leading-relaxed">{site.footerCompliance}</p>
+          <p className="mt-4 max-w-xs text-xs leading-relaxed">{site.tagline}</p>
         </div>
 
         <div>
@@ -31,8 +31,8 @@ export function Footer() {
 
         <div>
           <p className="eyebrow mb-3 text-espresso/65">Legal</p>
-          <p className="text-xs leading-relaxed text-espresso/75">
-            Brokerage and licensing disclosures will be finalized before launch.
+          <p className="rounded-xl border border-charcoal/10 bg-white/45 px-4 py-3 text-xs leading-relaxed text-espresso/75">
+            {site.footerCompliance}
           </p>
         </div>
       </div>

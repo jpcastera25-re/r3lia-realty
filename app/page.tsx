@@ -20,8 +20,9 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <section className="relative flex min-h-[90vh] items-end overflow-hidden px-6 py-20 md:px-10 md:py-24">
+      <section className="relative flex min-h-[76vh] items-end overflow-hidden px-6 py-20 md:min-h-[90vh] md:px-10 md:py-24">
         <VisualPlaceholder className="absolute inset-0 rounded-none border-none" variant="hero" accentLabel="Private Advisory" />
+        <div className="hero-ambient pointer-events-none absolute inset-0 opacity-65" />
         <div className="hero-overlay absolute inset-0" />
         <div className="relative mx-auto w-full max-w-6xl">
           <p className="eyebrow mb-5 text-espresso/75">{site.hero.eyebrow}</p>

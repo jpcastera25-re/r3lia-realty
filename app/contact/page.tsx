@@ -18,10 +18,10 @@ export default function ContactPage() {
       <p className="eyebrow mb-4 text-espresso/70">Contact</p>
       <h1 className="font-serif text-5xl text-charcoal">Begin a private conversation.</h1>
       <p className="mt-5 max-w-3xl text-espresso/85">
-        Share your objectives and timeline. A representative will respond with a private next-step brief.
+        Share your objectives and timeline. A member of the R3LIA team will respond with a private next-step brief.
       </p>
       <div className="mt-10 max-w-4xl">
-        <InquiryForm submitLabel="Begin Private Conversation" />
+        <InquiryForm submitLabel="Begin Private Conversation" footerNote="Private inquiries are reviewed directly by the R3LIA team." />
       </div>
     </Section>
   );
