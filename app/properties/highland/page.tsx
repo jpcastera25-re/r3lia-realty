@@ -17,8 +17,9 @@ export const metadata: Metadata = {
 export default function HighlandPage() {
   return (
     <>
-      <section className="relative flex min-h-[90vh] items-end overflow-hidden px-6 py-20 md:px-10">
+      <section className="relative flex min-h-[76vh] items-end overflow-hidden px-6 py-20 md:min-h-[90vh] md:px-10">
         <VisualPlaceholder className="absolute inset-0 rounded-none border-none" variant="cinematic" accentLabel="Private Offering 001" />
+        <div className="hero-ambient pointer-events-none absolute inset-0 opacity-70" />
         <div className="hero-overlay absolute inset-0" />
         <div className="relative mx-auto w-full max-w-6xl">
           <p className="eyebrow mb-5 text-espresso/75">{highland.id}</p>
@@ -79,7 +80,7 @@ export default function HighlandPage() {
             <div>
               <h2 className="font-serif text-3xl text-charcoal">{highland.gallery[3].title}</h2>
               <p className="mt-3 text-sm leading-relaxed text-espresso/85">
-                Spatial composition prioritizes retreat, circulation, and quiet separation. Final photography will be released in the launch dossier.
+                Spatial composition prioritizes retreat, circulation, and quiet separation, reinforcing a residence designed for both privacy and ease.
               </p>
             </div>
             <VisualPlaceholder className="min-h-[20rem]" variant="editorial" accentLabel="Suite" />
@@ -125,7 +126,11 @@ export default function HighlandPage() {
       <Section id="inquiry" className="bg-white/40">
         <p className="eyebrow mb-4 text-espresso/70">Private Showings by Appointment</p>
         <h2 className="mb-8 font-serif text-4xl text-charcoal">Request a private showing.</h2>
-        <InquiryForm submitLabel="Request Private Showing" />
+        <InquiryForm
+          submitLabel="Request Private Showing"
+          defaultInquiryIntent="Private Showing"
+          footerNote="Private inquiries are reviewed directly by the R3LIA team. Showings are available by appointment."
+        />
       </Section>
     </>
   );

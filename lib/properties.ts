@@ -5,12 +5,12 @@ export const highland = {
   price: "$1,500,000",
   heroSubtitle: "A private residence offered at $1,500,000.",
   snapshot: {
-    residence: "Placeholder details",
-    property: "Placeholder details",
-    showings: "By appointment"
+    residence: "Details forthcoming",
+    property: "Full specifications to be released",
+    showings: "Showings by appointment"
   },
   narrative:
-    "The Residence at Highland is curated for calm, scale, and everyday ease. From first arrival through evening retreat, each space is composed to feel intentional and quietly elevated. Final photography and specific architectural details will be published with the full launch package.",
+    "The residence is presented with a focus on calm, scale, and everyday ease, with full property details available through the private showing process.",
   gallery: [
     { title: "Arrival" },
     { title: "Living" },
