@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Section } from "@/components/Section";
 import { VisualPlaceholder } from "@/components/VisualPlaceholder";
@@ -20,32 +21,58 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <section className="relative flex min-h-[76vh] items-end overflow-hidden px-6 py-20 md:min-h-[90vh] md:px-10 md:py-24">
-        <VisualPlaceholder className="absolute inset-0 rounded-none border-none" variant="hero" accentLabel="Private Advisory" />
-        <div className="hero-ambient pointer-events-none absolute inset-0 opacity-65" />
-        <div className="hero-overlay absolute inset-0" />
-        <div className="relative mx-auto w-full max-w-6xl">
-          <p className="eyebrow mb-5 text-espresso/75">{site.hero.eyebrow}</p>
-          <h1 className="max-w-4xl font-serif text-4xl leading-tight text-charcoal md:text-6xl">{site.hero.headline}</h1>
-          <p className="mt-6 max-w-2xl text-base text-espresso/90 md:text-lg">{site.hero.subheadline}</p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Link
-              href={site.hero.primaryCta.href}
-              className="rounded-full bg-charcoal px-6 py-3 text-sm text-ivory transition hover:bg-espresso focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass/55"
-            >
-              {site.hero.primaryCta.label}
-            </Link>
-            <Link
-              href={site.hero.secondaryCta.href}
-              className="rounded-full border border-charcoal/25 px-6 py-3 text-sm text-charcoal transition hover:bg-charcoal/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass/55"
-            >
-              {site.hero.secondaryCta.label}
-            </Link>
+      {/* Hero — two-column editorial */}
+      <section className="px-6 pb-12 pt-16 md:px-10 md:pb-16 md:pt-24">
+        <div className="mx-auto w-full max-w-6xl">
+          <div className="grid items-center gap-10 md:grid-cols-2 lg:gap-16">
+
+            {/* Left: copy and CTAs */}
+            <div>
+              <p className="eyebrow mb-5 text-espresso/70">{site.hero.eyebrow}</p>
+              <h1 className="font-serif text-4xl leading-tight text-charcoal md:text-5xl lg:text-6xl">
+                {site.hero.headline}
+              </h1>
+              <p className="mt-6 text-base text-espresso/85 md:text-lg">{site.hero.subheadline}</p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Link
+                  href={site.hero.primaryCta.href}
+                  className="rounded-full bg-charcoal px-6 py-3 text-sm text-ivory transition hover:bg-espresso focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass/55"
+                >
+                  {site.hero.primaryCta.label}
+                </Link>
+                <Link
+                  href={site.hero.secondaryCta.href}
+                  className="rounded-full border border-charcoal/25 px-6 py-3 text-sm text-charcoal transition hover:bg-charcoal/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass/55"
+                >
+                  {site.hero.secondaryCta.label}
+                </Link>
+              </div>
+            </div>
+
+            {/* Right: brand image panel */}
+            <div className="relative min-h-[28rem] overflow-hidden rounded-3xl border border-charcoal/10 shadow-soft md:min-h-[36rem]">
+              <Image
+                src={highland.homepageBrandImage}
+                alt={highland.homepageBrandImageAlt}
+                fill
+                priority
+                className="object-cover"
+                style={{ objectPosition: "center 30%" }}
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <div className="absolute bottom-4 left-4">
+                <span className="inline-block rounded-full border border-charcoal/20 bg-ivory/85 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] text-charcoal/70 backdrop-blur-sm">
+                  Private Offering 001 · Highland
+                </span>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      <Section className="pt-20 md:pt-28">
+      {/* Current Offering */}
+      <Section className="pt-10 md:pt-14">
         <p className="eyebrow mb-5 text-espresso/70">Current Offering</p>
         <div className="grid items-center gap-8 rounded-3xl border border-charcoal/10 bg-white/45 p-6 shadow-soft md:grid-cols-[1fr,1.3fr] md:p-10">
           <div>
@@ -67,8 +94,19 @@ export default function Home() {
             sizes="(max-width: 768px) 100vw, 55vw"
           />
         </div>
+        <p className="mt-3 text-xs text-espresso/50">
+          Full presentation notes available on the{" "}
+          <Link
+            href="/properties/highland"
+            className="underline decoration-espresso/30 underline-offset-2 hover:text-espresso/70"
+          >
+            Highland offering page
+          </Link>
+          .
+        </p>
       </Section>
 
+      {/* Representation pillars */}
       <Section>
         <p className="eyebrow mb-5 text-espresso/70">Representation with Intention</p>
         <div className="grid gap-6 md:grid-cols-3">
@@ -84,6 +122,7 @@ export default function Home() {
         </div>
       </Section>
 
+      {/* Seller strategy — with real aerial image */}
       <Section className="bg-white/35">
         <div className="grid gap-8 md:grid-cols-2 md:items-center">
           <div>
@@ -95,10 +134,25 @@ export default function Home() {
               R3LIA develops narrative-led campaigns with controlled release strategy, refined communication, and editorial presentation so the right buyers engage at the right moment.
             </p>
           </div>
-          <VisualPlaceholder className="min-h-[23rem]" variant="editorial" accentLabel="Seller Strategy" />
+          <div className="relative min-h-[23rem] overflow-hidden rounded-[1.25rem] border border-charcoal/15">
+            <Image
+              src={highland.sellerStrategyImage}
+              alt={highland.sellerStrategyImageAlt}
+              fill
+              className="object-cover"
+              style={{ objectPosition: "center 40%" }}
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+            <div className="absolute bottom-4 left-4">
+              <span className="inline-block rounded-full border border-charcoal/20 bg-ivory/85 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] text-charcoal/70 backdrop-blur-sm">
+                Asset positioning
+              </span>
+            </div>
+          </div>
         </div>
       </Section>
 
+      {/* HAVN / Intelligence */}
       <Section>
         <p className="eyebrow mb-4 text-espresso/70">Powered by Better Decisions</p>
         <div className="rounded-3xl border border-brass/30 bg-brass/10 p-8 md:p-10">
@@ -115,6 +169,7 @@ export default function Home() {
         </div>
       </Section>
 
+      {/* About */}
       <Section className="pb-20 md:pb-28">
         <p className="eyebrow mb-4 text-espresso/70">About R3LIA</p>
         <h2 className="max-w-4xl font-serif text-4xl text-charcoal md:text-5xl">

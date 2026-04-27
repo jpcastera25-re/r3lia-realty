@@ -185,5 +185,11 @@ export const highland = {
     "Serious interest in Highland is met with a structured decision brief — covering oceanfront pricing context, comparable positioning, and long-term ownership scenarios specific to this offering. HAVN intelligence informs this process quietly behind the scenes.",
 
   stagingDisclosure:
-    "Select interior images may be virtually staged or digitally edited for presentation purposes. Actual property conditions should be verified during a private showing."
+    "Select interior images may be virtually staged or digitally edited for presentation purposes. Actual property conditions should be verified during a private showing.",
+
+  homepageBrandImage: "/images/highland/balcony-ocean.jpg",
+  homepageBrandImageAlt: "Private oceanfront balcony — Highland, Private Offering 001",
+
+  sellerStrategyImage: "/images/highland/setting-aerial.jpg",
+  sellerStrategyImageAlt: "Aerial view of Highland's oceanfront position — an example of R3LIA asset context"
 };
