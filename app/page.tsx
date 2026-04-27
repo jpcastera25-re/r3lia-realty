@@ -50,7 +50,7 @@ export default function Home() {
             </div>
 
             {/* Right: brand image panel */}
-            <div className="relative min-h-[28rem] overflow-hidden rounded-3xl border border-charcoal/10 shadow-soft md:min-h-[36rem]">
+            <div className="relative min-h-[22rem] overflow-hidden rounded-3xl border border-charcoal/10 shadow-soft md:min-h-[36rem]">
               <Image
                 src={highland.homepageBrandImage}
                 alt={highland.homepageBrandImageAlt}
@@ -127,7 +127,7 @@ export default function Home() {
         <div className="grid gap-8 md:grid-cols-2 md:items-center">
           <div>
             <p className="eyebrow mb-4 text-espresso/70">Designed to Make a Property Feel Rare</p>
-            <h2 className="font-serif text-4xl text-charcoal">
+            <h2 className="font-serif text-2xl text-charcoal md:text-4xl">
               Seller representation designed to protect value before the market ever sees the property.
             </h2>
             <p className="mt-5 text-espresso/85">
@@ -156,7 +156,7 @@ export default function Home() {
       <Section>
         <p className="eyebrow mb-4 text-espresso/70">Powered by Better Decisions</p>
         <div className="rounded-3xl border border-brass/30 bg-brass/10 p-8 md:p-10">
-          <h2 className="font-serif text-3xl text-charcoal">Intelligence in service of private advisory.</h2>
+          <h2 className="font-serif text-2xl text-charcoal md:text-3xl">Intelligence in service of private advisory.</h2>
           <p className="mt-4 max-w-3xl text-espresso/85">
             R3LIA advisory is quietly supported by HAVN decision intelligence, helping organize market context, pricing signals, and communication strategy behind the scenes.
           </p>
@@ -172,7 +172,7 @@ export default function Home() {
       {/* About */}
       <Section className="pb-20 md:pb-28">
         <p className="eyebrow mb-4 text-espresso/70">About R3LIA</p>
-        <h2 className="max-w-4xl font-serif text-4xl text-charcoal md:text-5xl">
+        <h2 className="max-w-4xl font-serif text-3xl text-charcoal md:text-4xl lg:text-5xl">
           A private brokerage practice for consequential residential decisions.
         </h2>
         <p className="mt-6 max-w-3xl text-espresso/85">

@@ -29,7 +29,7 @@ export default function HighlandPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative flex min-h-[76vh] items-end overflow-hidden px-6 py-20 md:min-h-[90vh] md:px-10">
+      <section className="relative flex min-h-[76svh] items-end overflow-hidden px-6 pb-24 pt-20 md:min-h-[90svh] md:px-10 md:py-20">
         <div className="absolute inset-0">
           <Image
             src={highland.heroImage}
@@ -82,8 +82,11 @@ export default function HighlandPage() {
       {/* Residence narrative */}
       <Section>
         <p className="eyebrow mb-4 text-espresso/70">The Residence</p>
-        <p className="max-w-4xl font-serif text-3xl leading-relaxed text-charcoal md:text-4xl">
-          {highland.narrative}
+        <h2 className="max-w-3xl font-serif text-2xl leading-snug text-charcoal md:text-3xl lg:text-4xl">
+          {highland.narrativeHeadline}
+        </h2>
+        <p className="mt-5 max-w-3xl text-base leading-relaxed text-espresso/85 md:text-lg">
+          {highland.narrativeBody}
         </p>
       </Section>
 
@@ -252,7 +255,7 @@ export default function HighlandPage() {
       {/* Buyer advisory */}
       <Section>
         <p className="eyebrow mb-4 text-espresso/70">Understand the Opportunity</p>
-        <h2 className="max-w-4xl font-serif text-4xl text-charcoal">
+        <h2 className="max-w-4xl font-serif text-2xl text-charcoal md:text-4xl">
           Private buyer guidance for the Highland opportunity.
         </h2>
         <p className="mt-5 max-w-3xl text-espresso/85">{highland.buyerAdvisoryNote}</p>
@@ -261,7 +264,7 @@ export default function HighlandPage() {
       {/* Inquiry form */}
       <Section id="inquiry" className="bg-white/40">
         <p className="eyebrow mb-4 text-espresso/70">Private Showings by Appointment</p>
-        <h2 className="mb-8 font-serif text-4xl text-charcoal">Request a private showing.</h2>
+        <h2 className="mb-8 font-serif text-2xl text-charcoal md:text-4xl">Request a private showing.</h2>
         <InquiryForm
           submitLabel="Request Private Showing"
           defaultInquiryIntent="Private Showing"

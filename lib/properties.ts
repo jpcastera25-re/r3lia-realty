@@ -36,6 +36,10 @@ export const highland = {
   narrative:
     "Highland is defined by light, openness, and the view. Wide ocean-facing windows frame the main living and dining areas, while a private suite, balcony moments, and clean-lined interiors create a residence designed around coastal ease.",
 
+  narrativeHeadline: "Defined by light, openness, and the view.",
+  narrativeBody:
+    "Wide ocean-facing windows frame the main living and dining areas, while a private suite, balcony moments, and clean-lined interiors create a residence designed around coastal ease.",
+
   gallery: [
     {
       key: "coastal-setting",
