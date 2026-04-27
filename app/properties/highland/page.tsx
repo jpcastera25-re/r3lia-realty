@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { InquiryForm } from "@/components/InquiryForm";
 import { Section } from "@/components/Section";
 import { VisualPlaceholder } from "@/components/VisualPlaceholder";
@@ -29,13 +30,17 @@ export default function HighlandPage() {
     <>
       {/* Hero */}
       <section className="relative flex min-h-[76vh] items-end overflow-hidden px-6 py-20 md:min-h-[90vh] md:px-10">
-        <VisualPlaceholder
-          src={highland.heroImage}
-          alt={highland.heroImageAlt}
-          objectPosition="center 40%"
-          className="absolute inset-0 rounded-none border-none"
-          sizes="100vw"
-        />
+        <div className="absolute inset-0">
+          <Image
+            src={highland.heroImage}
+            alt={highland.heroImageAlt}
+            fill
+            priority
+            className="object-cover"
+            style={{ objectPosition: "center 40%" }}
+            sizes="100vw"
+          />
+        </div>
         <div className="hero-ambient pointer-events-none absolute inset-0 opacity-50" />
         <div className="hero-overlay absolute inset-0" />
         <div className="relative mx-auto w-full max-w-6xl">
