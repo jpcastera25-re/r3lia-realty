@@ -59,7 +59,13 @@ export default function Home() {
               View Highland Offering
             </Link>
           </div>
-          <VisualPlaceholder className="min-h-[24rem]" variant="cinematic" accentLabel="001" />
+          <VisualPlaceholder
+            src={highland.currentOfferingImage}
+            alt={highland.currentOfferingImageAlt}
+            objectPosition="center"
+            className="min-h-[24rem]"
+            sizes="(max-width: 768px) 100vw, 55vw"
+          />
         </div>
       </Section>
 

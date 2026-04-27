@@ -1,7 +1,13 @@
+import Image from "next/image";
+
 type VisualPlaceholderProps = {
   className?: string;
   variant?: "hero" | "editorial" | "cinematic" | "detail";
   accentLabel?: string;
+  src?: string;
+  alt?: string;
+  objectPosition?: string;
+  sizes?: string;
 };
 
 const variantStyles: Record<NonNullable<VisualPlaceholderProps["variant"]>, string> = {
@@ -11,7 +17,32 @@ const variantStyles: Record<NonNullable<VisualPlaceholderProps["variant"]>, stri
   detail: "from-[#e8dfd3] via-[#dbcfbf] to-[#c5b7a3]"
 };
 
-export function VisualPlaceholder({ className = "", variant = "editorial", accentLabel }: VisualPlaceholderProps) {
+export function VisualPlaceholder({
+  className = "",
+  variant = "editorial",
+  accentLabel,
+  src,
+  alt = "",
+  objectPosition = "center",
+  sizes = "(max-width: 768px) 100vw, 50vw"
+}: VisualPlaceholderProps) {
+  if (src) {
+    return (
+      <div
+        className={`relative overflow-hidden rounded-[1.25rem] border border-charcoal/15 ${className}`}
+      >
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          className="object-cover"
+          style={{ objectPosition }}
+          sizes={sizes}
+        />
+      </div>
+    );
+  }
+
   return (
     <div
       aria-hidden="true"
