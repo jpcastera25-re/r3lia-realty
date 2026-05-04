@@ -23,9 +23,9 @@ export const site = {
   },
 
   legal: {
-    listingBrokerage: "Castera Realty",
+    listingBrokerage: "Castera Realty Corp",
     footerNotice:
-      "Highland marketing campaign presented by R3LIA Realty. Listing brokerage: Castera Realty. Property information is provided for marketing purposes, deemed reliable but not guaranteed, and should be independently verified. Equal Housing Opportunity.",
+      "Highland marketing campaign presented by R3LIA Realty. Listing brokerage: Castera Realty Corp. Property information is provided for marketing purposes, deemed reliable but not guaranteed, and should be independently verified. Equal Housing Opportunity.",
     stagingDisclosure:
       "Select interior images may be virtually staged or digitally edited for presentation purposes. Actual property conditions should be verified during a private showing."
   }

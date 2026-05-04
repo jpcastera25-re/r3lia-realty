@@ -9,11 +9,11 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Highland Oceanfront Residence",
   description:
-    "Private Offering 001: Highland, an oceanfront residence offered at $1,500,000 with private showings by appointment.",
+    "Private Offering 001: Highland, an oceanfront residence offered at $1,599,999 with private showings by appointment.",
   openGraph: {
-    title: "Highland | Oceanfront Residence Offered at $1,500,000",
+    title: "Highland | Oceanfront Residence Offered at $1,599,999",
     description:
-      "Explore Highland, Private Offering 001 by R3LIA Realty, with oceanfront views, direct beach access, grounds, pool, club space, and fitness amenities.",
+      "Explore Highland, Private Offering 001 by R3LIA Realty. 2 bed / 2.5 bath / 1,867 sq ft oceanfront condominium in Highland Beach, FL with direct beach access, pool, and resort amenities.",
     url: "/properties/highland",
     images: [
       {
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Highland | Oceanfront Residence Offered at $1,500,000",
+    title: "Highland | Oceanfront Residence Offered at $1,599,999",
     description:
-      "Explore Highland, Private Offering 001 by R3LIA Realty, with oceanfront views, direct beach access, grounds, pool, club space, and fitness amenities.",
+      "Explore Highland, Private Offering 001 by R3LIA Realty. 2 bed / 2.5 bath / 1,867 sq ft oceanfront condominium in Highland Beach, FL with direct beach access, pool, and resort amenities.",
     images: [highland.heroImage]
   }
 };
@@ -40,9 +40,17 @@ const jsonLd = {
   description: highland.heroDescription,
   url: `${site.url}/properties/highland`,
   image: `${site.url}${highland.heroImage}`,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: highland.addressStructured.streetAddress,
+    addressLocality: highland.addressStructured.city,
+    addressRegion: highland.addressStructured.state,
+    postalCode: highland.addressStructured.zip,
+    addressCountry: highland.addressStructured.country
+  },
   offers: {
     "@type": "Offer",
-    price: "1500000",
+    price: "1599999",
     priceCurrency: "USD",
     availability: "https://schema.org/InStock",
     seller: {
@@ -290,6 +298,57 @@ export default function HighlandPage() {
             </article>
           ))}
         </div>
+      </Section>
+
+      {/* Property Details */}
+      <Section>
+        <p className="eyebrow mb-4 text-espresso/70">Property Details</p>
+        <p className="mb-6 text-sm text-espresso/70">{highland.address}</p>
+
+        <div className="grid gap-5 rounded-2xl border border-charcoal/10 bg-white/45 p-6 md:grid-cols-2 md:gap-6 md:p-8 lg:grid-cols-3">
+          <div>
+            <span className="block text-xs uppercase tracking-[0.16em] text-espresso/60">Residence</span>
+            <span className="mt-1.5 block text-sm text-charcoal">{highland.specs.beds} bed / {highland.specs.baths} / {highland.specs.size}</span>
+          </div>
+          <div>
+            <span className="block text-xs uppercase tracking-[0.16em] text-espresso/60">Building</span>
+            <span className="mt-1.5 block text-sm text-charcoal">{highland.buildingName}, Est. {highland.yearBuilt}</span>
+          </div>
+          <div>
+            <span className="block text-xs uppercase tracking-[0.16em] text-espresso/60">Floor</span>
+            <span className="mt-1.5 block text-sm text-charcoal">{highland.specs.floor}</span>
+          </div>
+          <div>
+            <span className="block text-xs uppercase tracking-[0.16em] text-espresso/60">Views</span>
+            <span className="mt-1.5 block text-sm text-charcoal">{highland.specs.views}</span>
+          </div>
+          <div>
+            <span className="block text-xs uppercase tracking-[0.16em] text-espresso/60">Parking</span>
+            <span className="mt-1.5 block text-sm text-charcoal">{highland.specs.parking}</span>
+          </div>
+          <div>
+            <span className="block text-xs uppercase tracking-[0.16em] text-espresso/60">Amenities</span>
+            <span className="mt-1.5 block text-sm text-charcoal">Beach access, heated pool, clubhouse, fitness center, lobby, elevators</span>
+          </div>
+          <div className="md:col-span-2 lg:col-span-3">
+            <span className="block text-xs uppercase tracking-[0.16em] text-espresso/60">MLS</span>
+            <span className="mt-1.5 block text-sm text-charcoal">{highland.mlsNumber}</span>
+          </div>
+        </div>
+
+        <div className="mt-6 rounded-2xl border border-charcoal/10 bg-white/45 p-6 md:p-8">
+          <p className="eyebrow mb-3 text-espresso/60">Building Notes</p>
+          <ul className="grid gap-2 md:grid-cols-2">
+            {highland.buildingNotes.map((note) => (
+              <li key={note} className="flex items-start gap-2 text-sm text-espresso/85">
+                <span className="mt-1.5 block h-1 w-1 shrink-0 rounded-full bg-brass/60" />
+                {note}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <p className="mt-5 text-xs leading-relaxed text-espresso/60">{highland.buyerAgentNote}</p>
       </Section>
 
       {/* Buyer advisory */}

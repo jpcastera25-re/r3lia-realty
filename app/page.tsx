@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "R3LIA Realty | Luxury real estate, intelligently represented.",
     description:
-      "Private real estate advisory for consequential residential decisions, including current offering Highland at $1,500,000.",
+      "Private real estate advisory for consequential residential decisions, including current offering Highland at $1,599,999.",
     url: "/",
     images: [
       {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "R3LIA Realty | Luxury real estate, intelligently represented.",
     description:
-      "Private real estate advisory for consequential residential decisions, including current offering Highland at $1,500,000.",
+      "Private real estate advisory for consequential residential decisions, including current offering Highland at $1,599,999.",
     images: [highland.currentOfferingImage]
   }
 };

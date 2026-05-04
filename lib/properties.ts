@@ -15,7 +15,39 @@ export const highland = {
   id: "Private Offering 001",
   slug: "highland",
   name: "Highland",
-  price: "$1,500,000",
+  price: "$1,599,999",
+
+  address: "2909 S Ocean Blvd, Unit #6A, Highland Beach, FL 33487",
+  addressStructured: {
+    streetAddress: "2909 S Ocean Blvd, Unit #6A",
+    city: "Highland Beach",
+    state: "FL",
+    zip: "33487",
+    country: "US"
+  },
+  mlsNumber: "B26008339",
+  buildingName: "Wiltshire House",
+  yearBuilt: 1974,
+
+  specs: {
+    beds: "2",
+    baths: "2 full, 1 half",
+    size: "1,867 sq ft",
+    floor: "6 of 7",
+    parking: "1 covered / attached carport, guest parking available",
+    views: "Ocean, Intracoastal, Water",
+    facing: "East"
+  },
+
+  buildingNotes: [
+    "Concrete restoration completed",
+    "40-year certification completed",
+    "Funded reserves",
+    "No current assessments"
+  ],
+
+  buyerAgentNote:
+    "Buyer-side agents are welcome to inquire through the private showing form. Showings are by appointment with 24-hour notice requested.",
 
   heroImage: "/images/highland/hero-oceanfront.jpg",
   heroImageAlt: "Oceanfront view from Highland residence",
@@ -23,13 +55,13 @@ export const highland = {
   currentOfferingImage: "/images/highland/current-offering-living.jpg",
   currentOfferingImageAlt: "Highland living area with ocean views",
 
-  heroSubtitle: "An oceanfront residence offered at $1,500,000.",
+  heroSubtitle: "An oceanfront residence offered at $1,599,999.",
   heroDescription:
     "Set along the sand with sweeping water views, Highland pairs a private residential rhythm with direct access to the coast, pool, grounds, and everyday resort-style amenities.",
 
   snapshot: {
-    residence: "Oceanfront residence",
-    property: "Direct beach access, pool, club space, fitness",
+    residence: "2 Bed / 2.5 Bath / 1,867 Sq Ft",
+    property: "Direct oceanfront condominium",
     showings: "Private showings by appointment"
   },
 
@@ -198,5 +230,5 @@ export const highland = {
   sellerStrategyImageAlt: "Aerial view of Highland's oceanfront position — an example of R3LIA asset context",
 
   listingBrokerageNote:
-    "Highland marketing campaign presented by R3LIA Realty. Listing brokerage: Castera Realty."
+    "Highland marketing campaign presented by R3LIA Realty. Listing brokerage: Castera Realty Corp."
 };
