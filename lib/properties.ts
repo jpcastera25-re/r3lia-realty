@@ -28,9 +28,9 @@ export const highland = {
     "Set along the sand with sweeping water views, Highland pairs a private residential rhythm with direct access to the coast, pool, grounds, and everyday resort-style amenities.",
 
   snapshot: {
-    residence: "Details forthcoming",
-    property: "Full specifications to be released",
-    showings: "Showings by appointment"
+    residence: "Oceanfront residence",
+    property: "Direct beach access, pool, club space, fitness",
+    showings: "Private showings by appointment"
   },
 
   narrative:
@@ -195,5 +195,8 @@ export const highland = {
   homepageBrandImageAlt: "Private oceanfront balcony — Highland, Private Offering 001",
 
   sellerStrategyImage: "/images/highland/setting-aerial.jpg",
-  sellerStrategyImageAlt: "Aerial view of Highland's oceanfront position — an example of R3LIA asset context"
+  sellerStrategyImageAlt: "Aerial view of Highland's oceanfront position — an example of R3LIA asset context",
+
+  listingBrokerageNote:
+    "Highland marketing campaign presented by R3LIA Realty. Listing brokerage: Castera Realty."
 };

@@ -1,7 +1,9 @@
 export const site = {
   name: "R3LIA Realty",
   tagline: "Luxury real estate, intelligently represented.",
+  url: "https://r3liarealty.com",
   navCta: "Private Consultation",
+
   hero: {
     eyebrow: "Private Real Estate Advisory",
     headline: "Luxury real estate, intelligently represented.",
@@ -10,8 +12,23 @@ export const site = {
     primaryCta: { label: "View Current Offering", href: "/properties/highland" },
     secondaryCta: { label: "Request Private Consultation", href: "/contact" }
   },
-  footerCompliance:
-    "R3LIA Realty is a DBA of Rate Rebate Realty. Additional brokerage and licensing disclosures to be added before launch."
+
+  contact: {
+    brokerName: 'K. "JP" Castera',
+    brokerTitle: "Broker",
+    email: "jp@r3liarealty.com",
+    phone: "(754) 272-5890",
+    phoneHref: "tel:+17542725890",
+    address: "2719 Hollywood Boulevard #H-47, Hollywood, FL 33020, USA"
+  },
+
+  legal: {
+    listingBrokerage: "Castera Realty",
+    footerNotice:
+      "Highland marketing campaign presented by R3LIA Realty. Listing brokerage: Castera Realty. Property information is provided for marketing purposes, deemed reliable but not guaranteed, and should be independently verified. Equal Housing Opportunity.",
+    stagingDisclosure:
+      "Select interior images may be virtually staged or digitally edited for presentation purposes. Actual property conditions should be verified during a private showing."
+  }
 };
 
 export const representationPillars = [

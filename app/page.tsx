@@ -14,7 +14,20 @@ export const metadata: Metadata = {
     title: "R3LIA Realty | Luxury real estate, intelligently represented.",
     description:
       "Private real estate advisory for consequential residential decisions, including current offering Highland at $1,500,000.",
-    url: "https://r3liarealty.com/"
+    url: "/",
+    images: [
+      {
+        url: highland.currentOfferingImage,
+        alt: highland.currentOfferingImageAlt
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "R3LIA Realty | Luxury real estate, intelligently represented.",
+    description:
+      "Private real estate advisory for consequential residential decisions, including current offering Highland at $1,500,000.",
+    images: [highland.currentOfferingImage]
   }
 };
 

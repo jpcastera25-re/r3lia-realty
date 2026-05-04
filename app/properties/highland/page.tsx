@@ -4,18 +4,53 @@ import { InquiryForm } from "@/components/InquiryForm";
 import { Section } from "@/components/Section";
 import { VisualPlaceholder } from "@/components/VisualPlaceholder";
 import { highland } from "@/lib/properties";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Highland",
-  description: "Private Offering 001: Highland, an oceanfront residence offered at $1,500,000.",
+  title: "Highland Oceanfront Residence",
+  description:
+    "Private Offering 001: Highland, an oceanfront residence offered at $1,500,000 with private showings by appointment.",
   openGraph: {
-    title: "Highland | Private Offering 001",
-    description: "An oceanfront residence offered at $1,500,000 with discreet buyer guidance by R3LIA Realty.",
-    url: "https://r3liarealty.com/properties/highland"
+    title: "Highland | Oceanfront Residence Offered at $1,500,000",
+    description:
+      "Explore Highland, Private Offering 001 by R3LIA Realty, with oceanfront views, direct beach access, grounds, pool, club space, and fitness amenities.",
+    url: "/properties/highland",
+    images: [
+      {
+        url: highland.heroImage,
+        alt: highland.heroImageAlt
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Highland | Oceanfront Residence Offered at $1,500,000",
+    description:
+      "Explore Highland, Private Offering 001 by R3LIA Realty, with oceanfront views, direct beach access, grounds, pool, club space, and fitness amenities.",
+    images: [highland.heroImage]
   }
 };
 
 const section = (key: string) => highland.gallery.find((s) => s.key === key)!;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Residence",
+  name: highland.name,
+  description: highland.heroDescription,
+  url: `${site.url}/properties/highland`,
+  image: `${site.url}${highland.heroImage}`,
+  offers: {
+    "@type": "Offer",
+    price: "1500000",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+    seller: {
+      "@type": "RealEstateAgent",
+      name: site.name
+    }
+  }
+};
 
 export default function HighlandPage() {
   const coastal = section("coastal-setting");
@@ -28,6 +63,11 @@ export default function HighlandPage() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Hero */}
       <section className="relative flex min-h-[76svh] items-end overflow-hidden px-6 pb-24 pt-20 md:min-h-[90svh] md:px-10 md:py-20">
         <div className="absolute inset-0">
@@ -268,6 +308,7 @@ export default function HighlandPage() {
         <InquiryForm
           submitLabel="Request Private Showing"
           defaultInquiryIntent="Private Showing"
+          sourcePage="Highland Private Offering"
           footerNote="Private inquiries are reviewed directly by the R3LIA team. Showings are available by appointment."
         />
       </Section>

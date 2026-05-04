@@ -21,7 +21,11 @@ export default function ContactPage() {
         Share your objectives and timeline. A member of the R3LIA team will respond with a private next-step brief.
       </p>
       <div className="mt-10 max-w-4xl">
-        <InquiryForm submitLabel="Begin Private Conversation" footerNote="Private inquiries are reviewed directly by the R3LIA team." />
+        <InquiryForm
+          submitLabel="Begin Private Conversation"
+          sourcePage="Contact page"
+          footerNote="Private inquiries are reviewed directly by the R3LIA team."
+        />
       </div>
     </Section>
   );
