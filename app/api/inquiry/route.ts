@@ -33,9 +33,10 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ message: "Name and email are required." }, { status: 400 });
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
+  const token =
+    process.env.POSTMARK_SERVER_TOKEN ?? process.env.POSTMARK_API_KEY;
 
-  if (!apiKey) {
+  if (!token) {
     return NextResponse.json(
       {
         message: `Inquiry routing is not configured yet. Please email ${site.contact.email} directly.`
@@ -45,12 +46,13 @@ export async function POST(req: NextRequest) {
   }
 
   const fromEmail =
-    process.env.RESEND_FROM_EMAIL ?? `R3LIA Realty <noreply@r3liarealty.com>`;
+    process.env.POSTMARK_FROM_EMAIL ?? `R3LIA Realty <jp@r3liarealty.com>`;
   const toEmail = process.env.INQUIRY_TO_EMAIL ?? site.contact.email;
+  const messageStream = process.env.POSTMARK_MESSAGE_STREAM ?? "outbound";
 
   const subject = `[R3LIA] ${inquiryIntent ?? "Inquiry"} — ${fullName} (${inquiryRole ?? "Unknown"})`;
 
-  const emailText = [
+  const textBody = [
     `Source: ${sourcePage || "Website"}`,
     "",
     `Name: ${fullName}`,
@@ -64,22 +66,39 @@ export async function POST(req: NextRequest) {
     message || "—"
   ].join("\n");
 
-  const resendRes = await fetch("https://api.resend.com/emails", {
+  const htmlBody = `
+<table style="font-family:sans-serif;font-size:14px;color:#322a25;max-width:600px;width:100%">
+  <tr><td style="padding:0 0 8px"><strong>Source:</strong> ${sourcePage || "Website"}</td></tr>
+  <tr><td style="padding:0 0 8px"><strong>Name:</strong> ${fullName}</td></tr>
+  <tr><td style="padding:0 0 8px"><strong>Email:</strong> ${email}</td></tr>
+  <tr><td style="padding:0 0 8px"><strong>Phone:</strong> ${phone || "—"}</td></tr>
+  <tr><td style="padding:0 0 8px"><strong>Inquiry Role:</strong> ${inquiryRole || "—"}</td></tr>
+  <tr><td style="padding:0 0 8px"><strong>Inquiry Intent:</strong> ${inquiryIntent || "—"}</td></tr>
+  <tr><td style="padding:0 0 8px"><strong>Preferred Showing Window:</strong> ${preferredShowingWindow || "—"}</td></tr>
+  <tr><td style="padding:16px 0 4px"><strong>Message:</strong></td></tr>
+  <tr><td style="padding:0;white-space:pre-wrap">${message || "—"}</td></tr>
+</table>
+`.trim();
+
+  const postmarkRes = await fetch("https://api.postmarkapp.com/email", {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json"
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      "X-Postmark-Server-Token": token
     },
     body: JSON.stringify({
-      from: fromEmail,
-      to: [toEmail],
-      reply_to: email,
-      subject,
-      text: emailText
+      From: fromEmail,
+      To: toEmail,
+      Subject: subject,
+      HtmlBody: htmlBody,
+      TextBody: textBody,
+      ReplyTo: email,
+      MessageStream: messageStream
     })
   });
 
-  if (!resendRes.ok) {
+  if (!postmarkRes.ok) {
     return NextResponse.json(
       {
         message: `Inquiry routing failed. Please email ${site.contact.email} directly.`
