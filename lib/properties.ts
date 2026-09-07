@@ -11,11 +11,29 @@ type GallerySection = {
   note?: string;
 };
 
+export const highlandPricing = {
+  sale: 1459000,
+  monthlyRent: 8900
+} as const;
+
+const usd = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  maximumFractionDigits: 0
+});
+
+const salePrice = usd.format(highlandPricing.sale);
+const monthlyRent = usd.format(highlandPricing.monthlyRent);
+
 export const highland = {
   id: "Private Offering 001",
   slug: "highland",
   name: "Highland",
-  price: "$1,599,999",
+  salePrice: highlandPricing.sale,
+  monthlyRent: highlandPricing.monthlyRent,
+  price: salePrice,
+  rentalPrice: monthlyRent,
+  rentalOffering: `Also available for rent at ${monthlyRent}/month. Inquire for lease terms.`,
 
   address: "2909 S Ocean Blvd, Unit #6A, Highland Beach, FL 33487",
   addressStructured: {
@@ -55,7 +73,7 @@ export const highland = {
   currentOfferingImage: "/images/highland/current-offering-living.jpg",
   currentOfferingImageAlt: "Highland living area with ocean views",
 
-  heroSubtitle: "An oceanfront residence offered at $1,599,999.",
+  heroSubtitle: `An oceanfront residence offered at ${salePrice}.`,
   heroDescription:
     "Set along the sand with sweeping water views, Highland pairs a private residential rhythm with direct access to the coast, pool, grounds, and everyday resort-style amenities.",
 
@@ -218,7 +236,7 @@ export const highland = {
   ],
 
   buyerAdvisoryNote:
-    "Serious interest in Highland is met with a structured decision brief — covering oceanfront pricing context, comparable positioning, and long-term ownership scenarios specific to this offering. HAVN intelligence informs this process quietly behind the scenes.",
+    "For questions about Highland, contact us to discuss the residence, request current building information, or coordinate a private showing.",
 
   stagingDisclosure:
     "Select interior images may be virtually staged or digitally edited for presentation purposes. Actual property conditions should be verified during a private showing.",

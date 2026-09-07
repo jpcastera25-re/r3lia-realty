@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "R3LIA Realty | Luxury real estate, intelligently represented.",
     description:
-      "Private real estate advisory for consequential residential decisions, including current offering Highland at $1,599,999.",
+      `Private real estate advisory for consequential residential decisions, including current offering Highland at ${highland.price}.`,
     url: "/",
     images: [
       {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "R3LIA Realty | Luxury real estate, intelligently represented.",
     description:
-      "Private real estate advisory for consequential residential decisions, including current offering Highland at $1,599,999.",
+      `Private real estate advisory for consequential residential decisions, including current offering Highland at ${highland.price}.`,
     images: [highland.currentOfferingImage]
   }
 };
@@ -92,6 +92,9 @@ export default function Home() {
             <p className="text-sm uppercase tracking-[0.16em] text-espresso/70">{highland.id}</p>
             <h2 className="mt-3 font-serif text-5xl text-charcoal md:text-6xl">{highland.name}</h2>
             <p className="mt-4 text-lg text-espresso">Offered at {highland.price}</p>
+            <p className="mt-2 max-w-sm text-sm leading-relaxed text-espresso/75">
+              {highland.rentalOffering}
+            </p>
             <Link
               href="/properties/highland"
               className="mt-8 inline-flex rounded-full bg-charcoal px-6 py-3 text-sm text-ivory transition hover:bg-espresso focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass/55"
@@ -165,13 +168,13 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* HAVN / Intelligence */}
+      {/* Intelligence */}
       <Section>
         <p className="eyebrow mb-4 text-espresso/70">Powered by Better Decisions</p>
         <div className="rounded-3xl border border-brass/30 bg-brass/10 p-8 md:p-10">
           <h2 className="font-serif text-2xl text-charcoal md:text-3xl">Intelligence in service of private advisory.</h2>
           <p className="mt-4 max-w-3xl text-espresso/85">
-            R3LIA advisory is quietly supported by HAVN decision intelligence, helping organize market context, pricing signals, and communication strategy behind the scenes.
+            R3LIA brings market context, pricing comparisons, and clear communication to residential decisions.
           </p>
           <Link
             href="/intelligence"
