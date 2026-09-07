@@ -8,12 +8,11 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Highland Oceanfront Residence",
-  description:
-    "Private Offering 001: Highland, an oceanfront residence offered at $1,599,999 with private showings by appointment.",
+  description: `Private Offering 001: Highland, an oceanfront residence offered at ${highland.price}. ${highland.rentalOffering}`,
   openGraph: {
-    title: "Highland | Oceanfront Residence Offered at $1,599,999",
+    title: `Highland | Oceanfront Residence Offered at ${highland.price}`,
     description:
-      "Explore Highland, Private Offering 001 by R3LIA Realty. 2 bed / 2.5 bath / 1,867 sq ft oceanfront condominium in Highland Beach, FL with direct beach access, pool, and resort amenities.",
+      `Explore Highland, an oceanfront condominium offered for sale at ${highland.price}. ${highland.rentalOffering}`,
     url: "/properties/highland",
     images: [
       {
@@ -24,9 +23,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Highland | Oceanfront Residence Offered at $1,599,999",
+    title: `Highland | Oceanfront Residence Offered at ${highland.price}`,
     description:
-      "Explore Highland, Private Offering 001 by R3LIA Realty. 2 bed / 2.5 bath / 1,867 sq ft oceanfront condominium in Highland Beach, FL with direct beach access, pool, and resort amenities.",
+      `Explore Highland, an oceanfront condominium offered for sale at ${highland.price}. ${highland.rentalOffering}`,
     images: [highland.heroImage]
   }
 };
@@ -50,12 +49,12 @@ const jsonLd = {
   },
   offers: {
     "@type": "Offer",
-    price: "1599999",
+    price: String(highland.salePrice),
     priceCurrency: "USD",
     availability: "https://schema.org/InStock",
     seller: {
       "@type": "RealEstateAgent",
-      name: site.name
+      name: site.legal.listingBrokerage
     }
   }
 };
@@ -95,6 +94,9 @@ export default function HighlandPage() {
           <p className="eyebrow mb-5 text-espresso/75">{highland.id}</p>
           <h1 className="font-serif text-5xl text-charcoal md:text-7xl">{highland.name}</h1>
           <p className="mt-5 max-w-2xl text-lg text-espresso/90">{highland.heroSubtitle}</p>
+          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-espresso/80">
+            {highland.rentalOffering}
+          </p>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-espresso/75">{highland.heroDescription}</p>
           <a
             href="#inquiry"
@@ -111,6 +113,9 @@ export default function HighlandPage() {
           <p>
             <span className="block text-xs uppercase tracking-[0.16em] text-espresso/70">Offered at</span>
             <span className="mt-2 block text-base text-charcoal">{highland.price}</span>
+            <span className="mt-1 block text-xs leading-relaxed text-espresso/70">
+              {highland.rentalOffering}
+            </span>
           </p>
           <p>
             <span className="block text-xs uppercase tracking-[0.16em] text-espresso/70">Residence</span>

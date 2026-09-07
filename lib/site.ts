@@ -14,7 +14,7 @@ export const site = {
   },
 
   contact: {
-    brokerName: 'K. "JP" Castera',
+    brokerName: "K. JP Castera",
     brokerTitle: "Broker",
     email: "jp@r3liarealty.com",
     phone: "(754) 272-5890",
