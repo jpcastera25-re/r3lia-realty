@@ -138,6 +138,44 @@ export default function Home() {
         </div>
       </Section>
 
+      {/* HAVN — built by R3LIA */}
+      <Section className="bg-white/35">
+        <div className="grid gap-8 md:grid-cols-2 md:items-center">
+          <div>
+            <p className="eyebrow mb-4 text-espresso/70">{site.havn.eyebrow}</p>
+            <h2 className="font-serif text-2xl text-charcoal md:text-4xl">{site.havn.headline}</h2>
+            <p className="mt-5 text-espresso/85">
+              R3LIA Realty builds and operates HAVN, a buyer decision workspace built for buyer agents in South Florida. One home, one buyer link, the agent&rsquo;s name attached.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/havn"
+                className="rounded-full bg-charcoal px-6 py-3 text-sm text-ivory transition hover:bg-espresso focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass/55"
+              >
+                About HAVN
+              </Link>
+              <a
+                href={site.havn.url}
+                className="rounded-full border border-charcoal/25 px-6 py-3 text-sm text-charcoal transition hover:bg-charcoal/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass/55"
+              >
+                havnway.com
+              </a>
+            </div>
+          </div>
+          <div className="rounded-[1.25rem] border border-charcoal/15 bg-ivory p-8 shadow-soft md:p-10">
+            <p className="font-serif text-3xl tracking-[0.18em] text-charcoal">HAVN</p>
+            <ul className="mt-6 space-y-3 text-sm leading-relaxed text-espresso/85">
+              {site.havn.forAgents.map((line) => (
+                <li key={line} className="flex gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brass" aria-hidden="true" />
+                  <span>{line}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </Section>
+
       {/* Seller strategy — with real aerial image */}
       <Section className="bg-white/35">
         <div className="grid gap-8 md:grid-cols-2 md:items-center">

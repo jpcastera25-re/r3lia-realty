@@ -18,6 +18,7 @@ export function Footer() {
           <p className="eyebrow mb-3 text-espresso/65">Navigation</p>
           <ul className="space-y-2 text-xs">
             <li><Link href="/" className="transition hover:text-charcoal">Home</Link></li>
+            <li><Link href="/havn" className="transition hover:text-charcoal">HAVN</Link></li>
             <li><Link href="/properties/highland" className="transition hover:text-charcoal">Highland</Link></li>
             <li><Link href="/advisory" className="transition hover:text-charcoal">Advisory</Link></li>
             <li><Link href="/intelligence" className="transition hover:text-charcoal">Intelligence</Link></li>
@@ -32,7 +33,7 @@ export function Footer() {
             <li className="font-medium text-charcoal">{site.contact.brokerName}</li>
             <li className="text-espresso/70">{site.contact.brokerTitle}</li>
             <li className="text-espresso/70">
-              Listing brokerage: {site.legal.listingBrokerage}
+              Highland listing brokerage: {site.legal.listingBrokerage}
             </li>
             <li className="mt-2">
               <a
@@ -60,6 +61,14 @@ export function Footer() {
           <p className="eyebrow mb-3 text-espresso/65">Legal</p>
           <p className="rounded-xl border border-charcoal/10 bg-white/45 px-4 py-3 text-xs leading-relaxed text-espresso/75">
             {site.legal.footerNotice}
+          </p>
+          <p className="mt-3 text-xs leading-relaxed text-espresso/70">{site.legal.licenseLine}</p>
+          <p className="mt-2 text-xs leading-relaxed text-espresso/70">
+            R3LIA builds and operates{" "}
+            <a href={site.havn.url} className="underline decoration-brass/60 underline-offset-2 transition hover:text-charcoal">
+              HAVN
+            </a>
+            , a decision workspace for home buyers.
           </p>
         </div>
 

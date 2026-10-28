@@ -6,6 +6,7 @@ import { site } from "@/lib/site";
 
 const navItems = [
   { href: "/", label: "Home" },
+  { href: "/havn", label: "HAVN" },
   { href: "/properties/highland", label: "Highland" },
   { href: "/advisory", label: "Advisory" },
   { href: "/intelligence", label: "Intelligence" },
