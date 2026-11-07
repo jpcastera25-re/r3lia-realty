@@ -18,11 +18,12 @@ export function Footer() {
           <p className="eyebrow mb-3 text-espresso/65">Navigation</p>
           <ul className="space-y-2 text-xs">
             <li><Link href="/" className="transition hover:text-charcoal">Home</Link></li>
-            <li><Link href="/havn" className="transition hover:text-charcoal">HAVN</Link></li>
+            <li><Link href="/havn" className="transition hover:text-charcoal">HAVN buyer decision workspace</Link></li>
             <li><Link href="/properties/highland" className="transition hover:text-charcoal">Highland</Link></li>
             <li><Link href="/advisory" className="transition hover:text-charcoal">Advisory</Link></li>
             <li><Link href="/intelligence" className="transition hover:text-charcoal">Intelligence</Link></li>
             <li><Link href="/contact" className="transition hover:text-charcoal">Contact</Link></li>
+            <li><a href="https://raterebaterealty.com" className="transition hover:text-charcoal">Explore Rate Rebate Realty</a></li>
           </ul>
         </div>
 
@@ -32,9 +33,8 @@ export function Footer() {
           <ul className="space-y-1.5 text-xs leading-relaxed">
             <li className="font-medium text-charcoal">{site.contact.brokerName}</li>
             <li className="text-espresso/70">{site.contact.brokerTitle}</li>
-            <li className="text-espresso/70">
-              Highland listing brokerage: {site.legal.listingBrokerage}
-            </li>
+            <li className="text-espresso/70">{site.legal.licensedName}</li>
+            <li className="text-espresso/70">Florida brokerage · DBPR CQ1069806</li>
             <li className="mt-2">
               <a
                 href={`mailto:${site.contact.email}`}
@@ -64,11 +64,8 @@ export function Footer() {
           </p>
           <p className="mt-3 text-xs leading-relaxed text-espresso/70">{site.legal.licenseLine}</p>
           <p className="mt-2 text-xs leading-relaxed text-espresso/70">
-            R3LIA builds and operates{" "}
-            <a href={site.havn.url} className="underline decoration-brass/60 underline-offset-2 transition hover:text-charcoal">
-              HAVN
-            </a>
-            , a decision workspace for home buyers.
+            {site.havn.operatorStatement}{" "}
+            <a href={site.havn.url} className="underline decoration-brass/60 underline-offset-2 transition hover:text-charcoal">Visit HAVN</a>.
           </p>
         </div>
 
