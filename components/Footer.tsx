@@ -60,7 +60,7 @@ export function Footer() {
         <div>
           <p className="eyebrow mb-3 text-espresso/65">Legal</p>
           <p className="rounded-xl border border-charcoal/10 bg-white/45 px-4 py-3 text-xs leading-relaxed text-espresso/75">
-            {site.legal.footerNotice}
+            {site.legal.generalNotice}
           </p>
           <p className="mt-3 text-xs leading-relaxed text-espresso/70">{site.legal.licenseLine}</p>
           <p className="mt-2 text-xs leading-relaxed text-espresso/70">

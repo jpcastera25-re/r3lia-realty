@@ -247,6 +247,6 @@ export const highland = {
   sellerStrategyImage: "/images/highland/setting-aerial.jpg",
   sellerStrategyImageAlt: "Aerial view of Highland's oceanfront position — an example of R3LIA asset context",
 
-  listingBrokerageNote:
-    "Highland marketing campaign presented by R3LIA Realty. Listing brokerage: Castera Realty Corp."
+  marketingDisclosure:
+    "Highland is listed by Castera Realty Corp and marketed by R3LIA Realty with the listing brokerage's permission. Property information is provided for marketing purposes, deemed reliable but not guaranteed, and should be independently verified."
 };

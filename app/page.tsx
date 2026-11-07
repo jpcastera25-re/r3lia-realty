@@ -167,7 +167,7 @@ export default function Home() {
           />
         </div>
         <p className="mt-3 text-xs text-espresso/50">
-          {highland.listingBrokerageNote} {site.legal.stagingDisclosure} Full presentation notes available on the{" "}
+          {highland.marketingDisclosure} {highland.stagingDisclosure} Full presentation notes available on the{" "}
           <Link
             href="/properties/highland"
             className="underline decoration-espresso/30 underline-offset-2 hover:text-espresso/70"

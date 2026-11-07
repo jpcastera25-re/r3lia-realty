@@ -50,10 +50,7 @@ export const site = {
     /** The licensed name behind the R3LIA Realty trade name (Florida DBPR). */
     licensedName: "Rate Rebate Realty, PLLC d/b/a R3LIA Realty",
     licenseLine: "R3LIA Realty is the registered trade name of Rate Rebate Realty, PLLC, a licensed Florida real estate brokerage (DBPR CQ1069806).",
-    footerNotice:
-      "Highland is listed by Castera Realty Corp and marketed by R3LIA Realty with the listing brokerage's permission. Property information is provided for marketing purposes, deemed reliable but not guaranteed, and should be independently verified. Equal Housing Opportunity.",
-    stagingDisclosure:
-      "Select interior images may be virtually staged or digitally edited for presentation purposes. Actual property conditions should be verified during a private showing."
+    generalNotice: "Equal Housing Opportunity."
   }
 };
 
