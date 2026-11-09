@@ -68,12 +68,29 @@ export default function HavnPage() {
       <Section className="pb-20 md:pb-28">
         <p className="eyebrow mb-4 text-espresso/70">Who operates HAVN</p>
         <h2 className="max-w-4xl font-serif text-2xl text-charcoal md:text-3xl">
-          A licensed Florida brokerage, not a software vendor.
+          The brokerage behind the workspace.
         </h2>
         <p className="mt-5 max-w-3xl text-espresso/85">
-          {havn.operatorStatement} Listings shown in HAVN come from BeachesMLS under R3LIA&rsquo;s own IDX agreement, and every listing names the listing brokerage. Buyers&rsquo; private notes are never shared with their agent or with us.
+          {havn.operatorStatement}
         </p>
         <p className="mt-4 max-w-3xl text-xs text-espresso/70">{site.legal.licenseLine}</p>
+        <h2 className="mt-10 font-serif text-2xl text-charcoal">Agent visibility and privacy</h2>
+        <p className="mt-4 max-w-3xl text-espresso/85">
+          Agents can see saved homes, comparisons, activity and requests or questions a buyer chooses to send them.
+          They cannot read the text of a buyer&rsquo;s private notes or Ask HAVN conversations.
+          HAVN staff may access workspace data when needed to operate the service, fix problems or respond to security issues.
+          See HAVN&rsquo;s{" "}
+          <a href={`${havn.url}/privacy`} className="underline decoration-brass underline-offset-4 transition hover:text-charcoal">
+            Privacy Policy
+          </a>{" "}
+          for how information is handled.
+        </p>
+        <h2 className="mt-10 font-serif text-2xl text-charcoal">Listing information</h2>
+        <p className="mt-4 max-w-3xl text-sm leading-relaxed text-espresso/85">
+          Home listings carry their own source and brokerage disclosures. Listings shown in HAVN identify the listing
+          brokerage and how to reach it. Information is deemed reliable but not guaranteed and should be independently
+          verified.
+        </p>
       </Section>
     </>
   );
