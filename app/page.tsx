@@ -9,11 +9,11 @@ import { representationPillars, site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Home",
   description:
-    "R3LIA Realty is a private brokerage and advisory practice representing luxury properties with discretion, intelligence, and strategic positioning.",
+    site.hero.subheadline,
   openGraph: {
-    title: "R3LIA Realty | Luxury real estate, intelligently represented.",
+    title: `${site.name} | ${site.tagline}`,
     description:
-      `Private real estate advisory for consequential residential decisions, including current offering Highland at ${highland.price}.`,
+      site.hero.subheadline,
     url: "/",
     images: [
       {
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "R3LIA Realty | Luxury real estate, intelligently represented.",
+    title: `${site.name} | ${site.tagline}`,
     description:
-      `Private real estate advisory for consequential residential decisions, including current offering Highland at ${highland.price}.`,
+      site.hero.subheadline,
     images: [highland.currentOfferingImage]
   }
 };
@@ -84,6 +84,62 @@ export default function Home() {
         </div>
       </section>
 
+      {/* HAVN — built by R3LIA */}
+      <Section className="bg-white/35">
+        <div className="grid gap-8 md:grid-cols-2 md:items-center">
+          <div>
+            <p className="eyebrow mb-4 text-espresso/70">{site.havn.eyebrow}</p>
+            <h2 className="font-serif text-2xl text-charcoal md:text-4xl">{site.havn.headline}</h2>
+            <p className="mt-5 text-espresso/85">
+              {site.havn.operatorStatement}
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-espresso/85">{site.havn.availability}</p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/havn"
+                className="rounded-full bg-charcoal px-6 py-3 text-sm text-ivory transition hover:bg-espresso focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass/55"
+              >
+                About HAVN
+              </Link>
+              <a
+                href={site.havn.url}
+                className="rounded-full border border-charcoal/25 px-6 py-3 text-sm text-charcoal transition hover:bg-charcoal/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass/55"
+              >
+                havnway.com
+              </a>
+            </div>
+          </div>
+          <div className="rounded-[1.25rem] border border-charcoal/15 bg-ivory p-8 shadow-soft md:p-10">
+            <p className="font-serif text-3xl tracking-[0.18em] text-charcoal">HAVN</p>
+            <ul className="mt-6 space-y-3 text-sm leading-relaxed text-espresso/85">
+              {site.havn.forBuyers.map((line) => (
+                <li key={line} className="flex gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brass" aria-hidden="true" />
+                  <span>{line}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </Section>
+
+      {/* Representation pillars */}
+      <Section>
+        <p className="eyebrow mb-5 text-espresso/70">Brokerage services</p>
+        <div className="grid gap-6 md:grid-cols-3">
+          {representationPillars.map((pillar) => (
+            <article
+              key={pillar.title}
+              className="rounded-2xl border border-charcoal/10 bg-white/55 p-7 shadow-soft transition hover:-translate-y-0.5"
+            >
+              <h2 className="font-serif text-2xl text-charcoal">{pillar.title}</h2>
+              <p className="mt-4 text-sm leading-relaxed text-espresso/85">{pillar.description}</p>
+            </article>
+          ))}
+        </div>
+        <Link href="/advisory" className="mt-6 inline-flex text-sm text-charcoal underline decoration-brass underline-offset-4">Explore buying, selling and planning</Link>
+      </Section>
+
       {/* Current Offering */}
       <Section className="pt-10 md:pt-14">
         <p className="eyebrow mb-5 text-espresso/70">Current Offering</p>
@@ -111,7 +167,7 @@ export default function Home() {
           />
         </div>
         <p className="mt-3 text-xs text-espresso/50">
-          Full presentation notes available on the{" "}
+          {highland.marketingDisclosure} {highland.stagingDisclosure} Full presentation notes available on the{" "}
           <Link
             href="/properties/highland"
             className="underline decoration-espresso/30 underline-offset-2 hover:text-espresso/70"
@@ -122,116 +178,17 @@ export default function Home() {
         </p>
       </Section>
 
-      {/* Representation pillars */}
-      <Section>
-        <p className="eyebrow mb-5 text-espresso/70">Representation with Intention</p>
-        <div className="grid gap-6 md:grid-cols-3">
-          {representationPillars.map((pillar) => (
-            <article
-              key={pillar.title}
-              className="rounded-2xl border border-charcoal/10 bg-white/55 p-7 shadow-soft transition hover:-translate-y-0.5"
-            >
-              <h3 className="font-serif text-2xl text-charcoal">{pillar.title}</h3>
-              <p className="mt-4 text-sm leading-relaxed text-espresso/85">{pillar.description}</p>
-            </article>
-          ))}
-        </div>
-      </Section>
-
-      {/* HAVN — built by R3LIA */}
-      <Section className="bg-white/35">
-        <div className="grid gap-8 md:grid-cols-2 md:items-center">
-          <div>
-            <p className="eyebrow mb-4 text-espresso/70">{site.havn.eyebrow}</p>
-            <h2 className="font-serif text-2xl text-charcoal md:text-4xl">{site.havn.headline}</h2>
-            <p className="mt-5 text-espresso/85">
-              R3LIA Realty builds and operates HAVN, a buyer decision workspace built for buyer agents in South Florida. One home, one buyer link, the agent&rsquo;s name attached.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link
-                href="/havn"
-                className="rounded-full bg-charcoal px-6 py-3 text-sm text-ivory transition hover:bg-espresso focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass/55"
-              >
-                About HAVN
-              </Link>
-              <a
-                href={site.havn.url}
-                className="rounded-full border border-charcoal/25 px-6 py-3 text-sm text-charcoal transition hover:bg-charcoal/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass/55"
-              >
-                havnway.com
-              </a>
-            </div>
-          </div>
-          <div className="rounded-[1.25rem] border border-charcoal/15 bg-ivory p-8 shadow-soft md:p-10">
-            <p className="font-serif text-3xl tracking-[0.18em] text-charcoal">HAVN</p>
-            <ul className="mt-6 space-y-3 text-sm leading-relaxed text-espresso/85">
-              {site.havn.forAgents.map((line) => (
-                <li key={line} className="flex gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brass" aria-hidden="true" />
-                  <span>{line}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </Section>
-
-      {/* Seller strategy — with real aerial image */}
-      <Section className="bg-white/35">
-        <div className="grid gap-8 md:grid-cols-2 md:items-center">
-          <div>
-            <p className="eyebrow mb-4 text-espresso/70">Designed to Make a Property Feel Rare</p>
-            <h2 className="font-serif text-2xl text-charcoal md:text-4xl">
-              Seller representation designed to protect value before the market ever sees the property.
-            </h2>
-            <p className="mt-5 text-espresso/85">
-              R3LIA develops narrative-led campaigns with controlled release strategy, refined communication, and editorial presentation so the right buyers engage at the right moment.
-            </p>
-          </div>
-          <div className="relative min-h-[23rem] overflow-hidden rounded-[1.25rem] border border-charcoal/15">
-            <Image
-              src={highland.sellerStrategyImage}
-              alt={highland.sellerStrategyImageAlt}
-              fill
-              className="object-cover"
-              style={{ objectPosition: "center 40%" }}
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-            <div className="absolute bottom-4 left-4">
-              <span className="inline-block rounded-full border border-charcoal/20 bg-ivory/85 px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] text-charcoal/70 backdrop-blur-sm">
-                Asset positioning
-              </span>
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      {/* Intelligence */}
-      <Section>
-        <p className="eyebrow mb-4 text-espresso/70">Powered by Better Decisions</p>
-        <div className="rounded-3xl border border-brass/30 bg-brass/10 p-8 md:p-10">
-          <h2 className="font-serif text-2xl text-charcoal md:text-3xl">Intelligence in service of private advisory.</h2>
-          <p className="mt-4 max-w-3xl text-espresso/85">
-            R3LIA brings market context, pricing comparisons, and clear communication to residential decisions.
-          </p>
-          <Link
-            href="/intelligence"
-            className="mt-6 inline-flex text-sm text-charcoal underline decoration-brass underline-offset-4 transition hover:text-espresso focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass/50"
-          >
-            Explore the intelligence layer
-          </Link>
-        </div>
-      </Section>
-
-      {/* About */}
-      <Section className="pb-20 md:pb-28">
-        <p className="eyebrow mb-4 text-espresso/70">About R3LIA</p>
-        <h2 className="max-w-4xl font-serif text-3xl text-charcoal md:text-4xl lg:text-5xl">
-          A private brokerage practice for consequential residential decisions.
-        </h2>
-        <p className="mt-6 max-w-3xl text-espresso/85">
-          R3LIA Realty represents discerning sellers and buyers with a disciplined blend of storytelling, structured strategy, and calm execution.
+      <Section className="bg-white/35 pb-20 md:pb-28">
+        <p className="eyebrow mb-4 text-espresso/70">Our evolution</p>
+        <h2 className="max-w-4xl font-serif text-3xl text-charcoal md:text-4xl">A broader identity. The same focus on better decisions.</h2>
+        <p className="mt-6 max-w-3xl leading-relaxed text-espresso/85">
+          Rate Rebate Realty began with a simple goal: help buyers understand their options and keep more value in their purchase. As our work expanded, we adopted R3LIA Realty as our registered trade name, bringing real estate representation and practical technology under one broader identity. HAVN grew from that work: a workspace where buyers and their agents can organize homes, understand tradeoffs, and decide what comes next.
         </p>
+        <p className="mt-5 max-w-3xl text-sm leading-relaxed text-espresso/75">{site.legal.licenseLine}</p>
+        <div className="mt-6 flex flex-wrap gap-6 text-sm">
+          <a href="https://raterebaterealty.com" className="text-charcoal underline decoration-brass underline-offset-4">Explore Rate Rebate Realty</a>
+          <Link href="/intelligence" className="text-charcoal underline decoration-brass underline-offset-4">How we approach home decisions</Link>
+        </div>
       </Section>
     </>
   );

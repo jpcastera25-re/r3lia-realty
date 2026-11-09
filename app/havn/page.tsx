@@ -6,11 +6,11 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "HAVN",
   description:
-    "HAVN is a buyer decision workspace built and operated by R3LIA Realty. One home, one buyer link, the agent's name attached.",
+    "HAVN is a buyer decision workspace built and operated by Rate Rebate Realty, PLLC, doing business as R3LIA Realty.",
   openGraph: {
     title: "HAVN | Built by R3LIA Realty",
     description:
-      "HAVN is a buyer decision workspace built and operated by R3LIA Realty. One home, one buyer link, the agent's name attached.",
+      "HAVN is a buyer decision workspace built and operated by Rate Rebate Realty, PLLC, doing business as R3LIA Realty.",
     url: "https://r3liarealty.com/havn"
   }
 };
@@ -21,7 +21,9 @@ export default function HavnPage() {
     <>
       <Section>
         <p className="eyebrow mb-4 text-espresso/70">{havn.eyebrow}</p>
-        <h1 className="max-w-4xl font-serif text-4xl text-charcoal md:text-5xl">{havn.headline}</h1>
+        <h1 className="max-w-4xl font-serif text-4xl text-charcoal md:text-5xl">
+          Built by a brokerage. Designed around the home decision.
+        </h1>
         <p className="mt-6 max-w-3xl text-espresso/85">{havn.summary}</p>
         <div className="mt-8 flex flex-wrap gap-4">
           <a
@@ -34,7 +36,7 @@ export default function HavnPage() {
             href="/contact"
             className="rounded-full border border-charcoal/25 px-6 py-3 text-sm text-charcoal transition hover:bg-charcoal/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass/55"
           >
-            Ask for an invitation
+            Contact the brokerage
           </Link>
         </div>
       </Section>
@@ -42,10 +44,10 @@ export default function HavnPage() {
       <Section className="bg-white/35">
         <div className="grid gap-8 md:grid-cols-2 md:items-start">
           <div>
-            <p className="eyebrow mb-4 text-espresso/70">For buyer agents</p>
-            <h2 className="font-serif text-2xl text-charcoal md:text-3xl">Instead of sending more listing links, send HAVN.</h2>
+            <p className="eyebrow mb-4 text-espresso/70">For home buyers</p>
+            <h2 className="font-serif text-2xl text-charcoal md:text-3xl">A place to think through a home.</h2>
             <ul className="mt-6 space-y-3 text-sm leading-relaxed text-espresso/85">
-              {havn.forAgents.map((line) => (
+              {havn.forBuyers.map((line) => (
                 <li key={line} className="flex gap-3">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brass" aria-hidden="true" />
                   <span>{line}</span>
@@ -54,8 +56,11 @@ export default function HavnPage() {
             </ul>
           </div>
           <div className="rounded-3xl border border-brass/30 bg-brass/10 p-8 md:p-10">
-            <h2 className="font-serif text-2xl text-charcoal">By invitation</h2>
-            <p className="mt-4 text-sm leading-relaxed text-espresso/85">{havn.invitation}</p>
+            <h2 className="font-serif text-2xl text-charcoal">Availability</h2>
+            <p className="mt-4 text-sm leading-relaxed text-espresso/85">{havn.availability}</p>
+            <p className="mt-4 text-xs leading-relaxed text-espresso/70">
+              {site.legal.licensedName} · DBPR CQ1069806
+            </p>
             <p className="mt-5 text-sm">
               <a href={`mailto:${site.contact.email}`} className="underline decoration-brass underline-offset-4 transition hover:text-charcoal">
                 {site.contact.email}
@@ -68,12 +73,32 @@ export default function HavnPage() {
       <Section className="pb-20 md:pb-28">
         <p className="eyebrow mb-4 text-espresso/70">Who operates HAVN</p>
         <h2 className="max-w-4xl font-serif text-2xl text-charcoal md:text-3xl">
-          A licensed Florida brokerage, not a software vendor.
+          The brokerage behind the workspace.
         </h2>
         <p className="mt-5 max-w-3xl text-espresso/85">
-          HAVN is built and operated by R3LIA Realty, a Florida licensed real estate brokerage in Hollywood. Listings shown in HAVN come from BeachesMLS under R3LIA&rsquo;s own IDX agreement, and every listing names the listing brokerage. Buyers&rsquo; private notes are never shared with their agent or with us.
+          HAVN is a buyer decision workspace built and operated by Rate Rebate Realty, PLLC, doing business as R3LIA Realty.
         </p>
         <p className="mt-4 max-w-3xl text-xs text-espresso/70">{site.legal.licenseLine}</p>
+        <p className="mt-5 max-w-3xl text-espresso/85">
+          Using HAVN does not create an agency relationship with R3LIA Realty.
+        </p>
+        <h2 className="mt-10 font-serif text-2xl text-charcoal">Agent visibility and privacy</h2>
+        <p className="mt-4 max-w-3xl text-espresso/85">
+          Agents can see saved homes, comparisons, activity and requests or questions a buyer chooses to send them.
+          They cannot read the text of a buyer&rsquo;s private notes or Ask HAVN conversations.
+          HAVN staff may access workspace data when needed to operate the service, fix problems or respond to security issues.
+          See HAVN&rsquo;s{" "}
+          <a href={`${havn.url}/privacy`} className="underline decoration-brass underline-offset-4 transition hover:text-charcoal">
+            Privacy Policy
+          </a>{" "}
+          for how information is handled.
+        </p>
+        <h2 className="mt-10 font-serif text-2xl text-charcoal">Listing information</h2>
+        <p className="mt-4 max-w-3xl text-sm leading-relaxed text-espresso/85">
+          Home listings carry their own source and brokerage disclosures. Listings shown in HAVN identify the listing
+          brokerage and how to reach it. Information is deemed reliable but not guaranteed and should be independently
+          verified.
+        </p>
       </Section>
     </>
   );

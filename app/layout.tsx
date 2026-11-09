@@ -6,10 +6,10 @@ import { site } from "@/lib/site";
 import { highland } from "@/lib/properties";
 
 const globalDescription =
-  "R3LIA Realty provides luxury real estate advisory and property marketing for consequential residential decisions.";
+  "R3LIA Realty brings thoughtful representation and practical technology to buying, selling and considering a home.";
 
 const globalOgDescription =
-  "Luxury real estate advisory and property marketing for consequential residential decisions.";
+  "Thoughtful representation and practical technology for clearer home decisions.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),

@@ -130,6 +130,7 @@ export default function HighlandPage() {
             <span className="mt-2 block text-base text-charcoal">{highland.snapshot.showings}</span>
           </p>
         </div>
+        <p className="mt-5 text-xs leading-relaxed text-espresso/70">{highland.marketingDisclosure}</p>
       </Section>
 
       {/* Residence narrative */}
