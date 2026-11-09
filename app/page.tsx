@@ -93,7 +93,7 @@ export default function Home() {
             <p className="mt-5 text-espresso/85">
               {site.havn.operatorStatement}
             </p>
-            <p className="mt-4 text-sm leading-relaxed text-espresso/85">Organize homes, understand tradeoffs and decide what comes next, alongside the agent who invited you. Outside agents keep their own brokerage affiliation and relationship with their buyers.</p>
+            <p className="mt-4 text-sm leading-relaxed text-espresso/85">{site.havn.availability}</p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 href="/havn"
@@ -112,7 +112,7 @@ export default function Home() {
           <div className="rounded-[1.25rem] border border-charcoal/15 bg-ivory p-8 shadow-soft md:p-10">
             <p className="font-serif text-3xl tracking-[0.18em] text-charcoal">HAVN</p>
             <ul className="mt-6 space-y-3 text-sm leading-relaxed text-espresso/85">
-              {site.havn.forAgents.map((line) => (
+              {site.havn.forBuyers.map((line) => (
                 <li key={line} className="flex gap-3">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brass" aria-hidden="true" />
                   <span>{line}</span>

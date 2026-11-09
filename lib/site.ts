@@ -23,25 +23,23 @@ export const site = {
   },
 
   // HAVN — the buyer decision workspace R3LIA builds and operates (havnway.com).
-  // Agents who receive a HAVN invitation from R3LIA land here when they ask
-  // "who is R3LIA?"; this block is the answer, in the site's own voice.
+  // Public product explanation and current availability.
   havn: {
     name: "HAVN",
     url: "https://havnway.com",
     eyebrow: "Built by R3LIA",
     headline: "HAVN. One place for a buyer to decide.",
     summary:
-      "An agent starts with one home — an MLS number, a listing link, or an address — and HAVN gives their buyer a place to revisit it, save what matters, compare options, and ask questions. The inviting agent's name stays attached. Agents can see useful activity, but cannot read the buyer's private note text.",
+      "HAVN gives home buyers a place to revisit homes, save what matters, compare options, and ask questions about a property.",
     operatorStatement:
       "HAVN is a buyer decision workspace built and operated by Rate Rebate Realty, PLLC, doing business as R3LIA Realty.",
-    forAgents: [
-      "Start with one home. Paste the MLS #, listing link, or address; HAVN creates a buyer-ready link in seconds.",
-      "Your buyer gets a quiet place to think — not another portal to scroll.",
-      "See saved homes, comparisons and useful activity, with questions and tour requests shared when the buyer sends them. Agents cannot read private note text.",
-      "Your first three buyer HAVNs are free."
+    forBuyers: [
+      "Revisit the homes you are considering in one place.",
+      "Save what matters and compare the options.",
+      "Ask questions as you think through the next step."
     ],
-    invitation:
-      "HAVN is offered to buyer agents by invitation. If you received an email from R3LIA Realty, the button in it is your personalized way in. Otherwise, write to us and we will send one.",
+    availability:
+      "Agent workspaces and portals are not currently available to agents at other brokerages.",
     cta: { label: "Visit HAVN", href: "https://havnway.com" }
   },
 

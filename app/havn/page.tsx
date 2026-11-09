@@ -36,7 +36,7 @@ export default function HavnPage() {
             href="/contact"
             className="rounded-full border border-charcoal/25 px-6 py-3 text-sm text-charcoal transition hover:bg-charcoal/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brass/55"
           >
-            Ask for an invitation
+            Contact the brokerage
           </Link>
         </div>
       </Section>
@@ -44,10 +44,10 @@ export default function HavnPage() {
       <Section className="bg-white/35">
         <div className="grid gap-8 md:grid-cols-2 md:items-start">
           <div>
-            <p className="eyebrow mb-4 text-espresso/70">For buyer agents</p>
-            <h2 className="font-serif text-2xl text-charcoal md:text-3xl">Instead of sending more listing links, send HAVN.</h2>
+            <p className="eyebrow mb-4 text-espresso/70">For home buyers</p>
+            <h2 className="font-serif text-2xl text-charcoal md:text-3xl">A place to think through a home.</h2>
             <ul className="mt-6 space-y-3 text-sm leading-relaxed text-espresso/85">
-              {havn.forAgents.map((line) => (
+              {havn.forBuyers.map((line) => (
                 <li key={line} className="flex gap-3">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brass" aria-hidden="true" />
                   <span>{line}</span>
@@ -56,8 +56,8 @@ export default function HavnPage() {
             </ul>
           </div>
           <div className="rounded-3xl border border-brass/30 bg-brass/10 p-8 md:p-10">
-            <h2 className="font-serif text-2xl text-charcoal">By invitation</h2>
-            <p className="mt-4 text-sm leading-relaxed text-espresso/85">{havn.invitation}</p>
+            <h2 className="font-serif text-2xl text-charcoal">Availability</h2>
+            <p className="mt-4 text-sm leading-relaxed text-espresso/85">{havn.availability}</p>
             <p className="mt-4 text-xs leading-relaxed text-espresso/70">
               {site.legal.licensedName} · DBPR CQ1069806
             </p>
@@ -80,7 +80,6 @@ export default function HavnPage() {
         </p>
         <p className="mt-4 max-w-3xl text-xs text-espresso/70">{site.legal.licenseLine}</p>
         <p className="mt-5 max-w-3xl text-espresso/85">
-          Outside agents retain their own brokerage affiliation and their relationship with the buyers they invite.
           Using HAVN does not create an agency relationship with R3LIA Realty.
         </p>
         <h2 className="mt-10 font-serif text-2xl text-charcoal">Agent visibility and privacy</h2>
