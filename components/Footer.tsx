@@ -64,11 +64,11 @@ export function Footer() {
           </p>
           <p className="mt-3 text-xs leading-relaxed text-espresso/70">{site.legal.licenseLine}</p>
           <p className="mt-2 text-xs leading-relaxed text-espresso/70">
-            R3LIA builds and operates{" "}
+            {site.havn.operatorStatement}{" "}
             <a href={site.havn.url} className="underline decoration-brass/60 underline-offset-2 transition hover:text-charcoal">
-              HAVN
+              Visit HAVN
             </a>
-            , a decision workspace for home buyers.
+            .
           </p>
         </div>
 

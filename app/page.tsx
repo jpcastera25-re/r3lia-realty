@@ -145,8 +145,9 @@ export default function Home() {
             <p className="eyebrow mb-4 text-espresso/70">{site.havn.eyebrow}</p>
             <h2 className="font-serif text-2xl text-charcoal md:text-4xl">{site.havn.headline}</h2>
             <p className="mt-5 text-espresso/85">
-              R3LIA Realty builds and operates HAVN, a buyer decision workspace built for buyer agents in South Florida. One home, one buyer link, the agent&rsquo;s name attached.
+              {site.havn.operatorStatement}
             </p>
+            <p className="mt-4 text-sm leading-relaxed text-espresso/85">{site.havn.availability}</p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 href="/havn"
@@ -165,7 +166,7 @@ export default function Home() {
           <div className="rounded-[1.25rem] border border-charcoal/15 bg-ivory p-8 shadow-soft md:p-10">
             <p className="font-serif text-3xl tracking-[0.18em] text-charcoal">HAVN</p>
             <ul className="mt-6 space-y-3 text-sm leading-relaxed text-espresso/85">
-              {site.havn.forAgents.map((line) => (
+              {site.havn.forBuyers.map((line) => (
                 <li key={line} className="flex gap-3">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brass" aria-hidden="true" />
                   <span>{line}</span>
